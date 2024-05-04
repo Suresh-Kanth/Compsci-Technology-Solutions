@@ -27,7 +27,7 @@ SECRET_KEY = '+4ad)_+hio(ao!zo@i!$d98od#9_84oi+(2@nl2_^!gx*6r04w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -62,7 +62,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'CSTS.urls'
 
 TEMPLATES = [
     {
@@ -80,6 +79,7 @@ TEMPLATES = [
     },
 ]
 STATIC_URL = '/static/'
+ROOT_URLCONF = 'CSTS.urls'
 WSGI_APPLICATION = 'CSTS.wsgi.application'
 
 
