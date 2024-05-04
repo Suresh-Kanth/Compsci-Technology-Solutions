@@ -4,7 +4,7 @@ import uuid
 
 # Create your models here.
 class Employee(models.Model):
-    no = models.CharField("Employee Number", max_length=50, default=uuid.uuid4, null=False, blank=False, editable=False,
+    no = models.CharField("Employee Number",max_length=50, default=uuid.uuid4, null=False, blank=False, editable=False,
                           unique=True)
     firstname = models.CharField(max_length=122)
     lastname = models.CharField(max_length=122)
