@@ -15,7 +15,7 @@ def create_river_button(obj, transition_approval):
         />
     """
 class EmployeeAdmin(admin.ModelAdmin):
-    list_display = ('no', 'firstname', 'lastname', 'email','dob','phone_number','address','Aadhar_number','pan_number','my_state_field', 'river_actions')
+    list_display = ('no', 'firstname', 'lastname', 'email','dob','phone_number','address','Aadhar_number','pan_number','status', 'river_actions')
 
     def get_list_display(self, request):
         self.user = request.user
@@ -27,13 +27,13 @@ class EmployeeAdmin(admin.ModelAdmin):
             content += create_river_button(obj, transition_approval)
 
         return mark_safe(content)
-        
+
 admin.site.register(Employee,EmployeeAdmin)
 
 class EmployeeRiverAdmin(river_admin.RiverAdmin):
     name = "Issue Tracking Flow"
     icon = "mdi-employee-account"
-    list_displays = ['pk', 'no', 'firstname', 'lastname', 'email','dob','phone_number','address','Aadhar_number','pan_number','my_state_field']
+    list_displays = ['pk', 'no','firstname', 'lastname', 'email','dob','phone_number','address','Aadhar_number','pan_number','status']
 
 
 river_admin.site.register(Employee, "status", EmployeeAdmin)
